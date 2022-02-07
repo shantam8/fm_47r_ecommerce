@@ -1,0 +1,130 @@
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.header__container__left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__container__left img {
+  margin-left: 0.5rem;
+}
+
+.header__container__right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#btn__mobile-menu,
+#btn__cart,
+#btn__profile {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+}
+
+#btn__mobile-menu:hover,
+#btn__cart:hover,
+#btn__profile:hover {
+  cursor: pointer;
+}
+
+#btn__mobile-menu svg,
+#btn__cart svg {
+  font-size: 1.5rem;
+  color: var(--dark-grayish-blue);
+}
+
+#btn__mobile-menu {
+  z-index: 50;
+}
+
+#btn__profile {
+  width: 30px;
+  height: 30px;
+  background-image: url("../images/image-avatar.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 1rem;
+}
+
+.header__nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 200px;
+  padding: 5rem 0 0 1rem;
+  transition: all 0.2s ease;
+  transform: translateX(-100%);
+}
+
+.header__nav.menu-open {
+  transform: translateX(0%);
+}
+
+.header__nav li {
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+
+.header__nav a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--black);
+  padding: 0.5rem 0;
+}
+
+@media screen and (min-width: 50rem) {
+  .header__container {
+    border-bottom: 1px solid var(--dark-grayish-blue);
+  }
+
+  .header__nav {
+    position: relative;
+    transform: translateX(0);
+    height: unset;
+    width: unset;
+    padding: 0;
+  }
+
+  .header__nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__nav li {
+    margin-bottom: 0;
+    margin-left: 2rem;
+    position: relative;
+  }
+
+  .header__nav li:hover::after {
+  
+
+
+    position: absolute;
+    content: "";
+    height: 3px;
+    bottom: -21px;
+    left: 0;
+    right: 0;
+    background-color: var(--orange);
+}
+
+
+
+  .header__nav a {
+    font-weight: 400;
+    color: var(--dark-grayish-blue);
+  }
+}
