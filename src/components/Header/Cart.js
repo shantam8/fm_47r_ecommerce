@@ -3,7 +3,7 @@ import "./Cart.css";
 import { FaTrashAlt } from "react-icons/fa";
 
 function Cart() {
-  const [isCartEmpty, setIsCartEmpty] = useState(true);
+  const [isCartEmpty, setIsCartEmpty] = useState(false);
 
   return (
     <div>
@@ -16,6 +16,26 @@ function Cart() {
 
           {!isCartEmpty && (
             <div className="cart__content__container">
+              <div className="cart__item">
+                <div className="cart__item__thumb" />
+                <p className="cart__item__title">Autumn Limited Edition</p>
+                <p className="cart__item__pricebar">
+                  <span className="cart__item__price">$125.00</span> x
+                  <span className="cart__item__amount">10</span>  
+                  <span className="cart__item__total">$375.00</span>
+                </p>
+                <FaTrashAlt />
+              </div>
+              <div className="cart__item">
+                <div className="cart__item__thumb" />
+                <p className="cart__item__title">Autumn Limited Edition</p>
+                <p className="cart__item__pricebar">
+                  <span className="cart__item__price">$125.00</span> x
+                  <span className="cart__item__amount">10</span>  
+                  <span className="cart__item__total">$375.00</span>
+                </p>
+                <FaTrashAlt />
+              </div>
               <div className="cart__item">
                 <div className="cart__item__thumb" />
                 <p className="cart__item__title">Autumn Limited Edition</p>

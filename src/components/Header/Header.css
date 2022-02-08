@@ -1,8 +1,8 @@
 .header__container {
+  padding: 1rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
 }
 
 .header__container__left {
@@ -16,6 +16,7 @@
 }
 
 .header__container__right {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,7 +26,7 @@
 #btn__cart,
 #btn__profile {
   width: 25px;
-  height: 25px;
+  height: 26px;
   border: none;
   background-color: transparent;
 }
@@ -47,42 +48,54 @@
 }
 
 #btn__profile {
+  margin-left: 1rem;
   width: 30px;
   height: 30px;
   background-image: url("../../images/image-avatar.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  margin-left: 1rem;
 }
 
 .header__nav {
   position: absolute;
+  padding: 5rem 0 0 1.4rem;
   top: 0;
   left: 0;
-  height: 100vh;
   width: 200px;
-  padding: 5rem 0 0 1rem;
-  transition: all 0.2s ease;
+  height: 100vh;
   transform: translateX(-100%);
+  transition: all 0.2s ease;
 }
 
 .header__nav.header__nav--menu-open {
+  background-color: var(--white);
   transform: translateX(0%);
   z-index: 100;
-  background-color: var(--white);
 }
 
 .header__nav li {
-  list-style-type: none;
   margin-bottom: 1rem;
+  list-style-type: none;
 }
 
 .header__nav a {
-  text-decoration: none;
-  font-weight: 700;
-  color: var(--black);
   padding: 0.5rem 0;
+  color: var(--black);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 30rem) {
+  .header__nav {
+    padding: 5rem 0 0 2.4rem;
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  .header__container {
+    padding: 2rem 0;
+  }
 }
 
 @media screen and (min-width: 50rem) {
@@ -92,36 +105,40 @@
 
   .header__nav {
     position: relative;
-    transform: translateX(0);
-    height: unset;
-    width: unset;
     padding: 0;
+    width: unset;
+    height: unset;
+    transform: translateX(0);
   }
 
   .header__nav ul {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
   }
 
   .header__nav li {
+    position: relative;
     margin-bottom: 0;
     margin-left: 2rem;
-    position: relative;
   }
 
   .header__nav li:hover::after {
     position: absolute;
     content: "";
-    height: 3px;
-    bottom: -21px;
+    height: 5px;
     left: 0;
     right: 0;
+    bottom: -37px;
     background-color: var(--orange);
   }
 
   .header__nav a {
     font-weight: 400;
     color: var(--dark-grayish-blue);
+  }
+
+  #btn__profile {
+    margin-left: 2rem;
   }
 }

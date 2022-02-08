@@ -1,0 +1,40 @@
+.container--width {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media screen and (min-width: 30rem) {
+  .container--width {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  .container--width {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .container--width {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+
+@media screen and (min-width: 70rem) {
+  .container--width {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+}
+
+@media screen and (min-width: 85rem) {
+  .container--width {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+  }
+}
