@@ -12,6 +12,7 @@
 
 :root {
   --orange: hsl(26, 100%, 55%);
+  --orange-bg: hsl(26, 100%, 85%);
   --pale-orange: hsl(25, 100%, 94%);
 
   --very-vark-blue: hsl(220, 13%, 13%);

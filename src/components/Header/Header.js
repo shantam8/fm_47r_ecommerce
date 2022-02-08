@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 
+import "./Header.css";
+
+
+
 import { BiMenu } from "react-icons/bi";
 import { BsCart3 } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
 
 import logo from "../../images/logo.svg";
+import Cart from "./Cart";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(undefined);
 
   useEffect(() => {
@@ -21,6 +27,10 @@ function Header() {
 
   function handleToggleMobileMenu() {
     setIsMobileMenuOpen((previousState) => !previousState);
+  }
+
+  function handleCartToggle() {
+    setIsCartOpen((previousState) => !previousState);
   }
 
   function handleWindowResize() {
@@ -37,7 +47,11 @@ function Header() {
             </button>
           )}
           <img src={logo} />
-          <nav className={`header__nav ${isMobileMenuOpen ? "menu-open" : ""}`}>
+          <nav
+            className={`header__nav ${
+              isMobileMenuOpen ? "header__nav--menu-open" : ""
+            }`}
+          >
             <ul>
               <li>
                 <a href="#">Collections</a>
@@ -58,9 +72,10 @@ function Header() {
           </nav>
         </div>
         <div className="header__container__right">
-          <button id="btn__cart">
+          <button id="btn__cart" onClick={handleCartToggle}>
             <BsCart3 />
           </button>
+          {isCartOpen && <Cart />}
           <button id="btn__profile"></button>
         </div>
       </div>

@@ -1,10 +1,11 @@
-import react from "react";
+import Product from "./pages/Product";
 import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
       <Header />
+      <Product />
   
     </>
   );

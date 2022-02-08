@@ -43,13 +43,13 @@
 }
 
 #btn__mobile-menu {
-  z-index: 50;
+  z-index: 150;
 }
 
 #btn__profile {
   width: 30px;
   height: 30px;
-  background-image: url("../images/image-avatar.png");
+  background-image: url("../../images/image-avatar.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -67,8 +67,10 @@
   transform: translateX(-100%);
 }
 
-.header__nav.menu-open {
+.header__nav.header__nav--menu-open {
   transform: translateX(0%);
+  z-index: 100;
+  background-color: var(--white);
 }
 
 .header__nav li {
@@ -109,9 +111,6 @@
   }
 
   .header__nav li:hover::after {
-  
-
-
     position: absolute;
     content: "";
     height: 3px;
@@ -119,9 +118,7 @@
     left: 0;
     right: 0;
     background-color: var(--orange);
-}
-
-
+  }
 
   .header__nav a {
     font-weight: 400;
