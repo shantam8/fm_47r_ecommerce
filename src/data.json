@@ -1,0 +1,109 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "brand": "plushies inc.",
+      "title": "Tiger",
+      "description": "The tiger (Panthera tigris) is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside.",
+      "price": "20.00",
+      "discount": "50%",
+      "oldprice": "40.00",
+      "images": [
+        "../images/product1-image1.jpg",
+        "../images/product1-image2.jpg",
+        "../images/product1-image3.jpg",
+        "../images/product1-image4.jpg"
+      ],
+      "thumbnails": [
+        "../images/product1-image1-thumb.jpg",
+        "../images/product1-image2-thumb.jpg",
+        "../images/product1-image3-thumb.jpg",
+        "../images/product1-image4-thumb.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "brand": "plushies inc.",
+      "title": "Wolf",
+      "description": "The wolf, also known as the gray wolf or grey wolf, is a large canine native to Eurasia and North America. More than thirty subspecies of Canis lupus have been recognized.",
+      "price": "25.00",
+      "discount": "50%",
+      "oldprice": "50.00",
+      "images": [
+        "../images/product2-image1.jpg",
+        "../images/product2-image2.jpg",
+        "../images/product2-image3.jpg",
+        "../images/product2-image4.jpg"
+      ],
+      "thumbnails": [
+        "../images/product2-image1-thumb.jpg",
+        "../images/product2-image2-thumb.jpg",
+        "../images/product2-image3-thumb.jpg",
+        "../images/product2-image4-thumb.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "brand": "plushies inc.",
+      "title": "Kangaroo",
+      "description": "The kangaroo is a marsupial from the family Macropodidae. In common use the term is used to describe the largest species from this family, the red kangaroo, as well as the antilopine kangaroo.",
+      "price": "30.00",
+      "discount": "50%",
+      "oldprice": "60.00",
+      "images": [
+        "../images/product3-image1.jpg",
+        "../images/product3-image2.jpg",
+        "../images/product3-image3.jpg",
+        "../images/product3-image4.jpg"
+      ],
+      "thumbnails": [
+        "../images/product3-image1-thumb.jpg",
+        "../images/product3-image2-thumb.jpg",
+        "../images/product3-image3-thumb.jpg",
+        "../images/product3-image4-thumb.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "brand": "plushies inc.",
+      "title": "Owl",
+      "description": "Owls are birds from the order Strigiformes, which includes over 200 species of mostly solitary and nocturnal birds of prey typified by an upright stance, a large, broad head, binocular vision.",
+      "price": "35.00",
+      "discount": "50%",
+      "oldprice": "70.00",
+      "images": [
+        "../images/product4-image1.jpg",
+        "../images/product4-image2.jpg",
+        "../images/product4-image3.jpg",
+        "../images/product4-image4.jpg"
+      ],
+      "thumbnails": [
+        "../images/product4-image1-thumb.jpg",
+        "../images/product4-image2-thumb.jpg",
+        "../images/product4-image3-thumb.jpg",
+        "../images/product4-image4-thumb.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "brand": "plushies inc.",
+      "title": "Leopard",
+      "description": "The leopard (Panthera pardus) is one of the five extant species in the genus Panthera, a member of the cat family, Felidae.[4] It occurs in a wide range in sub-Saharan Africa.",
+      "price": "40.00",
+      "discount": "50%",
+      "oldprice": "80.00",
+      "images": [
+        "../images/product5-image1.jpg",
+        "../images/product5-image2.jpg",
+        "../images/product5-image3.jpg",
+        "../images/product5-image4.jpg"
+      ],
+      "thumbnails": [
+        "../images/product5-image1-thumb.jpg",
+        "../images/product5-image2-thumb.jpg",
+        "../images/product5-image3-thumb.jpg",
+        "../images/product5-image4-thumb.jpg"
+      ]
+    }
+  ]
+}

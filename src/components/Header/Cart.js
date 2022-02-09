@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Cart.css";
 import { FaTrashAlt } from "react-icons/fa";
 
-function Cart() {
-  const [isCartEmpty, setIsCartEmpty] = useState(false);
+function Cart(props) {
+  const [isCartEmpty, setIsCartEmpty] = useState(true);
+
+  useEffect(() => {
+    if (props.cartContent == "") {
+      setIsCartEmpty(true);
+    } else {
+      setIsCartEmpty(false);
+    }
+  }, [props.cartContent]);
+
+  function handleRemoveItemFromCart(event) {
+    props.handleRemoveItemFromCart(event.target.closest("button").value);
+  }
 
   return (
     <div>
@@ -16,37 +28,55 @@ function Cart() {
 
           {!isCartEmpty && (
             <div className="cart__content__container">
-              <div className="cart__item">
-                <div className="cart__item__thumb" />
-                <p className="cart__item__title">Autumn Limited Edition</p>
-                <p className="cart__item__pricebar">
-                  <span className="cart__item__price">$125.00</span> x
-                  <span className="cart__item__amount">10</span>  
-                  <span className="cart__item__total">$375.00</span>
-                </p>
-                <FaTrashAlt />
-              </div>
-              <div className="cart__item">
-                <div className="cart__item__thumb" />
-                <p className="cart__item__title">Autumn Limited Edition</p>
-                <p className="cart__item__pricebar">
-                  <span className="cart__item__price">$125.00</span> x
-                  <span className="cart__item__amount">10</span>  
-                  <span className="cart__item__total">$375.00</span>
-                </p>
-                <FaTrashAlt />
-              </div>
-              <div className="cart__item">
-                <div className="cart__item__thumb" />
-                <p className="cart__item__title">Autumn Limited Edition</p>
-                <p className="cart__item__pricebar">
-                  <span className="cart__item__price">$125.00</span> x
-                  <span className="cart__item__amount">10</span>  
-                  <span className="cart__item__total">$375.00</span>
-                </p>
-                <FaTrashAlt />
-              </div>
-              <button className="button__cta">Checkout</button>
+              {props.cartContent.map((element, index) => {
+                //console.log(element);
+
+                if (index % 2 == 0) {
+                  //setIsCartEmpty(false);
+                  // console.log("mein element");
+                  // console.log(props.data.products[element]);
+
+                  let totalPrice =
+                    props.data.products[element].price *
+                    props.cartContent[index + 1];
+
+                  return (
+                    <div
+                      className="cart__item"
+                      key={props.data.products[element].id}
+                    >
+                      <img
+                        src={props.data.products[element].thumbnails[0]}
+                        className="cart__item__thumb"
+                      />
+                      <p className="cart__item__title">
+                        {props.data.products[element].title}
+                      </p>
+                      <p className="cart__item__pricebar">
+                        <span className="cart__item__price">
+                          ${props.data.products[element].price}
+                        </span>{" "}
+                        x
+                        <span className="cart__item__amount">
+                          {props.cartContent[index + 1]}
+                        </span>
+                        <span className="cart__item__total">
+                          {" "}
+                          ${totalPrice.toFixed(2)}
+                        </span>
+                      </p>
+                      <button
+                        onClick={handleRemoveItemFromCart}
+                        value={element}
+                      >
+                        <FaTrashAlt />
+                      </button>
+                    </div>
+                  );
+                }
+              })}
+
+              <button id="btn__checkout">Checkout</button>
             </div>
           )}
         </div>

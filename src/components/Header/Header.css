@@ -11,8 +11,9 @@
   justify-content: space-between;
 }
 
-.header__container__left img {
+.header__container__left h1 {
   margin-left: 0.5rem;
+  font-weight: 700;
 }
 
 .header__container__right {
@@ -51,10 +52,17 @@
   margin-left: 1rem;
   width: 30px;
   height: 30px;
+  border-radius: 50%;
   background-image: url("../../images/image-avatar.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  outline: 0px solid var(--orange);
+  transition: outline 0.2s ease;
+}
+
+#btn__profile:hover {
+  outline: 2px solid var(--orange);
 }
 
 .header__nav {
@@ -75,20 +83,40 @@
 }
 
 .header__nav li {
+  position: relative;
   margin-bottom: 1rem;
   list-style-type: none;
 }
 
-.header__nav a {
+.header__nav li.link--active::after {
+  position: absolute;
+  content: "";
+  width: 4px;
+  top: 0;
+  bottom: 0;
+  left: -22px;
+  background-color: var(--orange);
+}
+
+.header__nav button {
   padding: 0.5rem 0;
+  border: none;
+  background-color: transparent;
   color: var(--black);
   font-weight: 700;
   text-decoration: none;
+}
+.header__nav button:hover {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 30rem) {
   .header__nav {
     padding: 5rem 0 0 2.4rem;
+  }
+
+  .header__nav li.link--active::after {
+    left: -38px;
   }
 }
 
@@ -101,6 +129,10 @@
 @media screen and (min-width: 50rem) {
   .header__container {
     border-bottom: 1px solid var(--dark-grayish-blue);
+  }
+
+  .header__container__left h1 {
+    margin-left: 0rem;
   }
 
   .header__nav {
@@ -118,9 +150,18 @@
   }
 
   .header__nav li {
-    position: relative;
     margin-bottom: 0;
     margin-left: 2rem;
+  }
+
+  .header__nav li.link--active::after {
+    width: unset;
+    height: 5px;
+    top: unset;
+    left: 0;
+    right: 0;
+    bottom: -35px;
+    background-color: var(--orange);
   }
 
   .header__nav li:hover::after {
@@ -129,16 +170,18 @@
     height: 5px;
     left: 0;
     right: 0;
-    bottom: -37px;
+    bottom: -35px;
     background-color: var(--orange);
   }
 
-  .header__nav a {
+  .header__nav button {
     font-weight: 400;
     color: var(--dark-grayish-blue);
   }
 
   #btn__profile {
     margin-left: 2rem;
+    width: 40px;
+    height: 40px;
   }
 }

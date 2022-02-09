@@ -6,15 +6,16 @@ import { BiMenu } from "react-icons/bi";
 import { BsCart3 } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
 
-import logo from "../../images/logo.svg";
 import Cart from "./Cart";
 import Container from "../utilities/Container";
 import Backdrop from "../utilities/Backdrop";
 
-function Header() {
+function Header(props) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(undefined);
+  const [activeLink, setActiveLink] = useState(0);
+  const [itemsTotal, setItemsTotal] = useState(0);
 
   useEffect(() => {
     window.addEventListener("resize", handleWindowResize);
@@ -43,6 +44,14 @@ function Header() {
     setWindowWidth(window.innerWidth);
   }
 
+  function handleProductSelection(event) {
+    setActiveLink(event.target.value)
+    if (isMobileMenuOpen){
+      handleToggleMobileMenu();
+    }
+    props.product(event.target.value);
+  }
+
   return (
     <header>
       <Container>
@@ -53,27 +62,37 @@ function Header() {
                 {!isMobileMenuOpen ? <BiMenu /> : <MdClose />}
               </button>
             )}
-            <img src={logo} />
+            <h1>plushies</h1>
             <nav
               className={`header__nav ${
                 isMobileMenuOpen ? "header__nav--menu-open" : ""
               }`}
             >
               <ul>
-                <li>
-                  <a href="#">Collections</a>
+                <li className={`${activeLink == 0 ? "link--active" : ""}`}>
+                  <button value="0" onClick={handleProductSelection}>
+                    {props.title[0].title}
+                  </button>
                 </li>
-                <li>
-                  <a href="#">Men</a>
+                <li className={`${activeLink == 1 ? "link--active" : ""}`}>
+                  <button value="1" onClick={handleProductSelection}>
+                    {props.title[1].title}
+                  </button>
                 </li>
-                <li>
-                  <a href="#">Women</a>
+                <li className={`${activeLink == 2 ? "link--active" : ""}`}>
+                  <button value="2" onClick={handleProductSelection}>
+                    {props.title[2].title}
+                  </button>
                 </li>
-                <li>
-                  <a href="#">About</a>
+                <li className={`${activeLink == 3 ? "link--active" : ""}`}>
+                  <button value="3" onClick={handleProductSelection}>
+                    {props.title[3].title}
+                  </button>
                 </li>
-                <li>
-                  <a href="#">Contact</a>
+                <li className={`${activeLink == 4 ? "link--active" : ""}`}>
+                  <button value="4" onClick={handleProductSelection}>
+                    {props.title[4].title}
+                  </button>
                 </li>
               </ul>
             </nav>
@@ -82,7 +101,13 @@ function Header() {
             <button id="btn__cart" onClick={handleCartToggle}>
               <BsCart3 />
             </button>
-            {isCartOpen && <Cart />}
+            {isCartOpen && (
+              <Cart
+                cartContent={props.cartContent}
+                data={props.data}
+                handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+              />
+            )}
             <button id="btn__profile"></button>
           </div>
         </div>

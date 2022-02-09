@@ -7,17 +7,7 @@ import {
 } from "react-icons/md";
 import { MdClose } from "react-icons/md";
 
-import image1 from "../../images/image-product-1.jpg";
-import image2 from "../../images/image-product-2.jpg";
-import image3 from "../../images/image-product-3.jpg";
-import image4 from "../../images/image-product-4.jpg";
-
-import thumb1 from "../../images/image-product-1-thumbnail.jpg";
-import thumb2 from "../../images/image-product-2-thumbnail.jpg";
-import thumb3 from "../../images/image-product-3-thumbnail.jpg";
-import thumb4 from "../../images/image-product-4-thumbnail.jpg";
-
-function Viewer() {
+function Viewer(props) {
   const [currentImage, setCurrentImage] = useState(0);
   const [currentImageTransitionClass, setCurrentImageTransitionClass] =
     useState("viewer__main-image--scrollTo0");
@@ -57,11 +47,9 @@ function Viewer() {
   }
 
   function handleChangeThumbnail(event) {
-    console.log(event.target.closest("button"));
     switch (event.target.closest("button").value) {
       case "thumb1":
         setCurrentImage(0);
-
         break;
       case "thumb2":
         setCurrentImage(1);
@@ -77,16 +65,18 @@ function Viewer() {
 
   return (
     <div className="viewer__images">
-        <button id="btn__close-viewer"><MdClose /></button>
+      <button id="btn__close-viewer" onClick={props.handleCloseViewer}>
+        <MdClose />
+      </button>
       <div className={`viewer__main-image ${currentImageTransitionClass}`}>
         <button onClick={handleImageScroll} value="left">
           <MdOutlineKeyboardArrowLeft />
         </button>
 
-        <img src={image1} alt="" />
-        <img src={image2} alt="" />
-        <img src={image3} alt="" />
-        <img src={image4} alt="" />
+        <img src={props.images[0]} alt="product" />
+        <img src={props.images[1]} alt="product" />
+        <img src={props.images[2]} alt="product" />
+        <img src={props.images[3]} alt="product" />
 
         <button onClick={handleImageScroll} value="right">
           <MdOutlineKeyboardArrowRight />
@@ -99,28 +89,28 @@ function Viewer() {
           value="thumb1"
           onClick={handleChangeThumbnail}
         >
-          <img src={thumb1} alt="" />
+          <img src={props.thumbnails[0]} alt="thumbnail" />
         </button>
         <button
           className={`${currentThumb == "1" ? "thumb--active" : ""}`}
           value="thumb2"
           onClick={handleChangeThumbnail}
         >
-          <img src={thumb2} alt="" />
+          <img src={props.thumbnails[1]} alt="thumbnail" />
         </button>
         <button
           className={`${currentThumb == "2" ? "thumb--active" : ""}`}
           value="thumb3"
           onClick={handleChangeThumbnail}
         >
-          <img src={thumb3} alt="" />
+          <img src={props.thumbnails[2]} alt="thumbnail" />
         </button>
         <button
           className={`${currentThumb == "3" ? "thumb--active" : ""}`}
           value="thumb4"
           onClick={handleChangeThumbnail}
         >
-          <img src={thumb4} alt="" />
+          <img src={props.thumbnails[3]} alt="thumbnail" />
         </button>
       </div>
     </div>
