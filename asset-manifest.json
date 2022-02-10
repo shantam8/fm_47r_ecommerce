@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.17712ed4.css",
-    "main.js": "/static/js/main.b14f9553.js",
+    "main.css": "/static/css/main.70ede344.css",
+    "main.js": "/static/js/main.ee5eb6cf.js",
     "static/media/KumbhSans-Bold.ttf": "/static/media/KumbhSans-Bold.4026f7b98708245e3b30.ttf",
     "static/media/KumbhSans-Regular.ttf": "/static/media/KumbhSans-Regular.f0b817a565ee7c8fbadb.ttf",
     "index.html": "/index.html",
-    "main.17712ed4.css.map": "/static/css/main.17712ed4.css.map",
-    "main.b14f9553.js.map": "/static/js/main.b14f9553.js.map"
+    "main.70ede344.css.map": "/static/css/main.70ede344.css.map",
+    "main.ee5eb6cf.js.map": "/static/js/main.ee5eb6cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.17712ed4.css",
-    "static/js/main.b14f9553.js"
+    "static/css/main.70ede344.css",
+    "static/js/main.ee5eb6cf.js"
   ]
 }
