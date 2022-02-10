@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-
 import "./Header.css";
 
 import { BiMenu } from "react-icons/bi";
 import { BsCart3 } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
 
-import Cart from "./Cart";
 import Container from "../utilities/Container";
+import Cart from "./Cart";
 import Backdrop from "../utilities/Backdrop";
 
 function Header(props) {
@@ -15,7 +14,7 @@ function Header(props) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(undefined);
   const [activeLink, setActiveLink] = useState(0);
-  const [itemsTotal, setItemsTotal] = useState(0);
+
 
   useEffect(() => {
     window.addEventListener("resize", handleWindowResize);
@@ -32,6 +31,8 @@ function Header(props) {
     }
   }, [windowWidth]);
 
+  useEffect(() => {}, [props.totalItemsInCart]);
+
   function handleToggleMobileMenu() {
     setIsMobileMenuOpen((previousState) => !previousState);
   }
@@ -45,8 +46,8 @@ function Header(props) {
   }
 
   function handleProductSelection(event) {
-    setActiveLink(event.target.value)
-    if (isMobileMenuOpen){
+    setActiveLink(event.target.value);
+    if (isMobileMenuOpen) {
       handleToggleMobileMenu();
     }
     props.product(event.target.value);
@@ -69,27 +70,27 @@ function Header(props) {
               }`}
             >
               <ul>
-                <li className={`${activeLink == 0 ? "link--active" : ""}`}>
+                <li className={`${activeLink === 0 ? "link--active" : ""}`}>
                   <button value="0" onClick={handleProductSelection}>
                     {props.title[0].title}
                   </button>
                 </li>
-                <li className={`${activeLink == 1 ? "link--active" : ""}`}>
+                <li className={`${activeLink === 1 ? "link--active" : ""}`}>
                   <button value="1" onClick={handleProductSelection}>
                     {props.title[1].title}
                   </button>
                 </li>
-                <li className={`${activeLink == 2 ? "link--active" : ""}`}>
+                <li className={`${activeLink === 2 ? "link--active" : ""}`}>
                   <button value="2" onClick={handleProductSelection}>
                     {props.title[2].title}
                   </button>
                 </li>
-                <li className={`${activeLink == 3 ? "link--active" : ""}`}>
+                <li className={`${activeLink === 3 ? "link--active" : ""}`}>
                   <button value="3" onClick={handleProductSelection}>
                     {props.title[3].title}
                   </button>
                 </li>
-                <li className={`${activeLink == 4 ? "link--active" : ""}`}>
+                <li className={`${activeLink === 4 ? "link--active" : ""}`}>
                   <button value="4" onClick={handleProductSelection}>
                     {props.title[4].title}
                   </button>
@@ -98,7 +99,16 @@ function Header(props) {
             </nav>
           </div>
           <div className="header__container__right">
-            <button id="btn__cart" onClick={handleCartToggle}>
+            {props.totalItemsInCart >0 && (
+              <p className="header__container__right__cart-overlay">
+                {props.totalItemsInCart}
+              </p>
+            )}
+            <button
+              id="btn__cart"
+              onClick={handleCartToggle}
+              className={props.wiggleCart ? "cart--wiggle" : ""}
+            >
               <BsCart3 />
             </button>
             {isCartOpen && (

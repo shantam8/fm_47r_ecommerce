@@ -6,7 +6,7 @@ function Cart(props) {
   const [isCartEmpty, setIsCartEmpty] = useState(true);
 
   useEffect(() => {
-    if (props.cartContent == "") {
+    if (props.cartContent === "") {
       setIsCartEmpty(true);
     } else {
       setIsCartEmpty(false);
@@ -29,13 +29,7 @@ function Cart(props) {
           {!isCartEmpty && (
             <div className="cart__content__container">
               {props.cartContent.map((element, index) => {
-                //console.log(element);
-
-                if (index % 2 == 0) {
-                  //setIsCartEmpty(false);
-                  // console.log("mein element");
-                  // console.log(props.data.products[element]);
-
+                if (index % 2 === 0) {
                   let totalPrice =
                     props.data.products[element].price *
                     props.cartContent[index + 1];
@@ -75,7 +69,6 @@ function Cart(props) {
                   );
                 }
               })}
-
               <button id="btn__checkout">Checkout</button>
             </div>
           )}
