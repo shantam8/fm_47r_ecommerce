@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Product.css";
-import Backdrop from "../components/utilities/Backdrop";
-import Viewer from "../components/utilities/Viewer";
+import Backdrop from "../utilities/Backdrop";
+import Viewer from "../utilities/Viewer";
 
 import { BsCart3 } from "react-icons/bs";
 import { FaPlus, FaMinus } from "react-icons/fa";

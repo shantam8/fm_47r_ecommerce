@@ -69,7 +69,7 @@ function Cart(props) {
                   );
                 }
               })}
-              <button id="btn__checkout">Checkout</button>
+              <button id="btn__checkout" onClick={()=>console.log("Thank you for your purchase.")}>Checkout</button>
             </div>
           )}
         </div>

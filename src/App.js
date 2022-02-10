@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import data from "./data.json";
 import Header from "./components/Header/Header";
-import Product from "./pages/Product";
+import Product from "./components/Product/Product";
 
 function App() {
   const [selectedProduct, setSelectedProduct] = useState("0");
