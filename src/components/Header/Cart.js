@@ -6,7 +6,7 @@ function Cart(props) {
   const [isCartEmpty, setIsCartEmpty] = useState(true);
 
   useEffect(() => {
-    if (props.cartContent === "") {
+    if (props.cartContent == "") {
       setIsCartEmpty(true);
     } else {
       setIsCartEmpty(false);
