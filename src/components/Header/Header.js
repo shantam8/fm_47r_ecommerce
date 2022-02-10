@@ -15,7 +15,6 @@ function Header(props) {
   const [windowWidth, setWindowWidth] = useState(undefined);
   const [activeLink, setActiveLink] = useState(0);
 
-
   useEffect(() => {
     window.addEventListener("resize", handleWindowResize);
     setWindowWidth(window.innerWidth);
@@ -69,28 +68,29 @@ function Header(props) {
                 isMobileMenuOpen ? "header__nav--menu-open" : ""
               }`}
             >
+
               <ul>
-                <li className={`${activeLink === 0 ? "link--active" : ""}`}>
+                <li className={`${activeLink == 0 ? "link--active" : ""}`}>
                   <button value="0" onClick={handleProductSelection}>
                     {props.title[0].title}
                   </button>
                 </li>
-                <li className={`${activeLink === 1 ? "link--active" : ""}`}>
+                <li className={`${activeLink == 1 ? "link--active" : ""}`}>
                   <button value="1" onClick={handleProductSelection}>
                     {props.title[1].title}
                   </button>
                 </li>
-                <li className={`${activeLink === 2 ? "link--active" : ""}`}>
+                <li className={`${activeLink == 2 ? "link--active" : ""}`}>
                   <button value="2" onClick={handleProductSelection}>
                     {props.title[2].title}
                   </button>
                 </li>
-                <li className={`${activeLink === 3 ? "link--active" : ""}`}>
+                <li className={`${activeLink == 3 ? "link--active" : ""}`}>
                   <button value="3" onClick={handleProductSelection}>
                     {props.title[3].title}
                   </button>
                 </li>
-                <li className={`${activeLink === 4 ? "link--active" : ""}`}>
+                <li className={`${activeLink == 4 ? "link--active" : ""}`}>
                   <button value="4" onClick={handleProductSelection}>
                     {props.title[4].title}
                   </button>
@@ -99,7 +99,7 @@ function Header(props) {
             </nav>
           </div>
           <div className="header__container__right">
-            {props.totalItemsInCart >0 && (
+            {props.totalItemsInCart > 0 && (
               <p className="header__container__right__cart-overlay">
                 {props.totalItemsInCart}
               </p>

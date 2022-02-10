@@ -10,6 +10,20 @@ function App() {
   const [isCartWiggleActive, setIsCartWiggleActive] = useState(false);
 
   useEffect(() => {
+    //image preloading test
+    data.products.forEach((product) => {
+      product.images.forEach((images) => {
+        const img = new Image();
+        img.src = images;
+      });
+      product.thumbnails.forEach((thumbnails) => {
+        const img = new Image();
+        img.src = thumbnails;
+      });
+    });
+  }, []);
+
+  useEffect(() => {
     setTotalItemsInCart(cartContent.length / 2);
   }, [cartContent]);
 

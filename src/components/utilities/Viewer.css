@@ -31,26 +31,30 @@
   height: auto;
 }
 
-.viewer__main-image img {
+.viewer__main-image div {
   width: 100%;
-  aspect-ratio: 1;
   transform: translateX(0%);
   transition: all 0.2s ease;
 }
 
-.viewer__main-image--scrollTo0 img {
+.viewer__main-image img {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.viewer__main-image--scrollTo0 div {
   transform: translateX(0%);
 }
 
-.viewer__main-image--scrollTo1 img {
+.viewer__main-image--scrollTo1 div {
   transform: translateX(-100%);
 }
 
-.viewer__main-image--scrollTo2 img {
+.viewer__main-image--scrollTo2 div {
   transform: translateX(-200%);
 }
 
-.viewer__main-image--scrollTo3 img {
+.viewer__main-image--scrollTo3 div {
   transform: translateX(-300%);
 }
 

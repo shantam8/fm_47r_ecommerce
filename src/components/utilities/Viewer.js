@@ -72,11 +72,18 @@ function Viewer(props) {
         <button onClick={handleImageScroll} value="left">
           <MdOutlineKeyboardArrowLeft />
         </button>
-
-        <img src={props.images[0]} alt="product" />
-        <img src={props.images[1]} alt="product" />
-        <img src={props.images[2]} alt="product" />
-        <img src={props.images[3]} alt="product" />
+        <div>
+          <img src={props.images[0]} alt="product" />
+        </div>
+        <div>
+          <img src={props.images[1]} alt="product" />
+        </div>
+        <div>
+          <img src={props.images[2]} alt="product" />
+        </div>
+        <div>
+          <img src={props.images[3]} alt="product" />
+        </div>
 
         <button onClick={handleImageScroll} value="right">
           <MdOutlineKeyboardArrowRight />

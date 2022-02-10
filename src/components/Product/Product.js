@@ -21,6 +21,7 @@ function Product(props) {
 
   useEffect(() => {
     window.addEventListener("resize", handleWindowResize);
+    console.log(props.thumbnails);
     handleWindowResize();
     return () => {
       window.removeEventListener("resize", handleWindowResize);
@@ -102,7 +103,7 @@ function Product(props) {
     }
   }
 
-  function handlerAddToCart(){
+  function handlerAddToCart() {
     props.handlerAddToCart(itemAmount);
     setItemAmount(1);
   }
@@ -120,10 +121,18 @@ function Product(props) {
                 <MdOutlineKeyboardArrowLeft />
               </button>
             )}
-            <img src={props.images[0]} alt="product" />
-            <img src={props.images[1]} alt="product" />
-            <img src={props.images[2]} alt="product" />
-            <img src={props.images[3]} alt="product" />
+            <div>
+              <img src={props.images[0]} alt="product" />
+            </div>
+            <div>
+              <img src={props.images[1]} alt="product" />
+            </div>
+            <div>
+              <img src={props.images[2]} alt="product" />
+            </div>
+            <div>
+              <img src={props.images[3]} alt="product" />
+            </div>
 
             {!isDesktopWidth && (
               <button onClick={handleImageScroll} value="right">
@@ -131,6 +140,7 @@ function Product(props) {
               </button>
             )}
           </div>
+
           {isDesktopWidth && (
             <div className="product__images__thumbnail-container">
               <button
@@ -199,7 +209,11 @@ function Product(props) {
               <FaPlus />
             </button>
           </div>
-          <button id="btn__add-to-cart" className="button__cta" onClick={handlerAddToCart}>
+          <button
+            id="btn__add-to-cart"
+            className="button__cta"
+            onClick={handlerAddToCart}
+          >
             <BsCart3 /> Add to cart
           </button>
         </div>
