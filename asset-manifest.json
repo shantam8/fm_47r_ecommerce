@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/fm_47r_ecommerce/static/css/main.059bb8b7.css",
-    "main.js": "/fm_47r_ecommerce/static/js/main.db3ef456.js",
+    "main.js": "/fm_47r_ecommerce/static/js/main.b3eb21f0.js",
     "static/media/KumbhSans-Bold.ttf": "/fm_47r_ecommerce/static/media/KumbhSans-Bold.4026f7b98708245e3b30.ttf",
     "static/media/KumbhSans-Regular.ttf": "/fm_47r_ecommerce/static/media/KumbhSans-Regular.f0b817a565ee7c8fbadb.ttf",
     "index.html": "/fm_47r_ecommerce/index.html",
     "main.059bb8b7.css.map": "/fm_47r_ecommerce/static/css/main.059bb8b7.css.map",
-    "main.db3ef456.js.map": "/fm_47r_ecommerce/static/js/main.db3ef456.js.map"
+    "main.b3eb21f0.js.map": "/fm_47r_ecommerce/static/js/main.b3eb21f0.js.map"
   },
   "entrypoints": [
     "static/css/main.059bb8b7.css",
-    "static/js/main.db3ef456.js"
+    "static/js/main.b3eb21f0.js"
   ]
 }
