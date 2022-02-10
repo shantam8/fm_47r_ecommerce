@@ -199,6 +199,10 @@
     color: var(--dark-grayish-blue);
   }
 
+  .header__container__right__cart-overlay {
+    top: -6px;
+  }
+
   #btn__profile {
     margin-left: 2rem;
     width: 40px;
